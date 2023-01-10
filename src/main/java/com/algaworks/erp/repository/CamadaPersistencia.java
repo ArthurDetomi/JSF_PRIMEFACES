@@ -38,7 +38,7 @@ public class CamadaPersistencia {
         empresa.setDataFundacao(new Date());
         empresa.setCnpj("08.939.156/0001-44");
         empresa.setTipo(TipoEmpresa.LTDA);
-        empresa.setRamoAtividade(ramoAtividade);
+        empresa.setRamoAtividade(ramoAtividadeList.get(0));
         empresa.setRazaoSocial("Mamonas");
         empresa.setId(10L);
 

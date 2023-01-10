@@ -41,7 +41,7 @@ public class Empresas implements Serializable {
 	}
 
 	public void remover(Empresa empresa) {
-		// só entity manager só remove objetos que está em seu contexto ou seja que ele
+		// o entity manager só remove objetos que está em seu contexto ou seja que ele
 		// está gerenciando
 		empresa = porId(empresa.getId());
 		manager.remove(empresa);
