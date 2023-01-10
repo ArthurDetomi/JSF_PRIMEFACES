@@ -7,7 +7,7 @@ import com.algaworks.erp.utils.Transacional;
 import javax.inject.Inject;
 import java.io.Serializable;
 
-public class CadastroEmpresaSerivce implements Serializable {
+public class CadastroEmpresaService implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Inject

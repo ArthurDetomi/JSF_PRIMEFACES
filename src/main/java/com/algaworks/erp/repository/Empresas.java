@@ -26,6 +26,7 @@ public class Empresas implements Serializable {
 		return manager.find(Empresa.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Empresa> pesquisar(String nome) {
 		String jpql = "from Empresa where nomeFantasia like :nomeFantasia";
 		
