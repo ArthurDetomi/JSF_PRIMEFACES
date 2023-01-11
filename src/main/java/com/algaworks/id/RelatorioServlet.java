@@ -11,13 +11,14 @@ import java.io.IOException;
 @WebServlet("/relatorio")
 public class RelatorioServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Inject
-    private RelatorioService relatorioService;
+	@Inject // instancia atraves do cdi
+	private RelatorioService relatorioService;
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println(relatorioService.totalPedidosMesAtual());
-    }
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.getWriter().println(relatorioService.totalPedidosMesAtual());
+	}
+
 }
