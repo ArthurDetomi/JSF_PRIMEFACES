@@ -8,15 +8,38 @@ xmlns:h="http://java.sun.com/jsf/html">
 		<title>Gestão de Empresas</title>
 		<h:outputStylesheet library="algaworks" name="estilo.css"/>
 	</h:head>
-	<body>
+	<!--  "h:body": Serve para que o JSF gerencie o body da página xhtml  -->
+	<h:body>
 		<header>
 			<h:graphicImage library="algaworks" name="logo.png"/>
 		</header>
 		
-		<h:outputText value="Ola Mundo!"/>
+		<div id="conteudo">
+			<!--"h:form": para toda vez que queremos enviar dados para o xhtml -->
+			<h:form>
+				<!-- 
+				"h:panelGrid": é um componente de posicionamento o html que gera é uma tabela simples 
+				informamos a quantidade de colunas. etc.
+				-->
+				<h:panelGrid columns="2">
+					<!-- "for=" para que o foco vai para o input text -->
+					<h:outputLabel value="Razao Social: " for="razaoSocial"/>
+					<h:inputText id="razaoSocial"/>
+					
+					<h:outputLabel value="Nome Fantasia: " for="nomeFantasia"/>
+					<h:inputText id="nomeFantasia"/>
+					
+					<h:outputLabel value="Tipo Empresa"/>
+					<!-- Gera um select -->
+					<h:selectOneMenu>
+						
+					</h:selectOneMenu>
+				</h:panelGrid>
+			</h:form>
+		</div>
 		
 		<footer>
 			Curso Online "Jsf e PrimeFaces Essencial"
 		</footer>
-	</body>
+	</h:body>
 </html>
