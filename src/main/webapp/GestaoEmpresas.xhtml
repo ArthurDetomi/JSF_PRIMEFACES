@@ -2,11 +2,21 @@
 <!-- Diz que o prefixo é o h -->
 <html xmlns="http.w3.org/1999/xhtml"
 xmlns:h="http://java.sun.com/jsf/html">
-	<head>
+	<!-- Ajuda que frameworks adicione todos os scripts necessários do primefaces -->
+	<h:head>
 		<meta charset="UTF-8"/>
 		<title>Gestão de Empresas</title>
-	</head>
+		<h:outputStylesheet library="algaworks" name="estilo.css"/>
+	</h:head>
 	<body>
-		<h:outputText value="Ola Mundo!"></h:outputText>
+		<header>
+			<h:graphicImage library="algaworks" name="logo.png"/>
+		</header>
+		
+		<h:outputText value="Ola Mundo!"/>
+		
+		<footer>
+			Curso Online "Jsf e PrimeFaces Essencial"
+		</footer>
 	</body>
 </html>
