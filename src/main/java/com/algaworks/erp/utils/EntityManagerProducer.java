@@ -16,8 +16,8 @@ public class EntityManagerProducer {
 	public EntityManagerProducer() {
 		this.factory = Persistence.createEntityManagerFactory("AlgaWorksPU");
 	}
-
-	@Produces // diz que esse metodo é um metodo produtor de entity manager
+	// @Produces diz ao CDI como ele deve injetar e instancia a classe específica
+	@Produces // diz que esse metodo é um metodo produtor da classe específicada no metodo
 	@RequestScoped // a cada requisição será uma instacia nova
 	public EntityManager createEntityManager() {
 		return this.factory.createEntityManager();
