@@ -36,6 +36,10 @@ public class GestaoEmpresasBean implements Serializable {
 			+ "\n" + "Nome Fantasia:" + empresa.getNomeFantasia() //	
 			+ "\n" +"Tipo Empresa:" + empresa.getTipo()); 
 	}
+	
+	public String ajuda() {
+		return "AjudaGestaoEmpresas?faces-redirect=true";
+	}
 
 	public Empresa getEmpresa() {
 		return empresa;
