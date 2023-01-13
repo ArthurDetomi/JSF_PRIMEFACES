@@ -1,45 +1,80 @@
+<!-- 
+" h:head " Ajuda que frameworks adicione todos os scripts necessários do primefaces 
+" h:dataTabel " -> Lista dados para o usuário, foco de listar dados 
+" h:panelGrid ": é um componente de posicionamento o html que gera uma tabela simples 
+ que informamos a quantidade de colunas. etc.
+" h:body ": Serve para que o JSF gerencie o body da página xhtml  -
+" for="" " para que o foco vai para o input text 
+-->
 <!DOCTYPE html>
-<!-- Diz que o prefixo é o h -->
-<html xmlns="http.w3.org/1999/xhtml"
-xmlns:h="http://java.sun.com/jsf/html">
-	<!-- Ajuda que frameworks adicione todos os scripts necessários do primefaces -->
-	<h:head>
-		<meta charset="UTF-8"/>
-		<title>Gestão de Empresas</title>
-		<h:outputStylesheet library="algaworks" name="estilo.css"/>
-	</h:head>
-	<!--  "h:body": Serve para que o JSF gerencie o body da página xhtml  -->
-	<h:body>
-		<header>
-			<h:graphicImage library="algaworks" name="logo.png"/>
-		</header>
-		
-		<div id="conteudo">
-			<!--"h:form": para toda vez que queremos enviar dados para o xhtml -->
-			<h:form>
-				<!-- 
-				"h:panelGrid": é um componente de posicionamento o html que gera é uma tabela simples 
-				informamos a quantidade de colunas. etc.
-				-->
-				<h:panelGrid columns="2">
-					<!-- "for=" para que o foco vai para o input text -->
-					<h:outputLabel value="Razao Social: " for="razaoSocial"/>
-					<h:inputText id="razaoSocial"/>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+ 	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+	<meta charset="UTF-8"/>
+	<title>Gestão Empresas</title>
+	
+<h:outputStylesheet library="algaworks" name="estilo.css" />
+
+</h:head>
+
+<h:body>
+	<header>
+		<h:graphicImage library="algaworks" name="logo.png" />
+	</header>
+
+	<div id="conteudo">
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Razão social: " for="razaoSocial" />
+				<h:inputText id="razaoSocial" />
+				
+				<h:outputLabel value="Nome fantasia: " for="nomeFantasia" />
+				<h:inputText id="nomeFantasia" />
+				
+				<h:outputLabel value="Tipo empresa" for="tipo" />
+				<h:selectOneMenu id="tipo">
+					<f:selectItem itemLabel="Selecione..." />
+					<f:selectItem itemLabel="MEI" itemValue="MEI" />
+					<f:selectItem itemLabel="LTDA" itemValue="LTDA" />
+				</h:selectOneMenu>
+				
+				<h:outputLabel />
+				<h:commandButton value="Salvar" />
+			</h:panelGrid>
+			
+			<h:dataTable value="#{[0, 0, 0, 0]}">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Razão social" />
+					</f:facet>
 					
-					<h:outputLabel value="Nome Fantasia: " for="nomeFantasia"/>
-					<h:inputText id="nomeFantasia"/>
+					<h:outputText value="AlgaWorks Softwares, Treinamentos LTDA" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nome fantasia" />
+					</f:facet>
 					
-					<h:outputLabel value="Tipo Empresa"/>
-					<!-- Gera um select -->
-					<h:selectOneMenu>
-						
-					</h:selectOneMenu>
-				</h:panelGrid>
-			</h:form>
-		</div>
-		
-		<footer>
-			Curso Online "Jsf e PrimeFaces Essencial"
-		</footer>
-	</h:body>
+					<h:outputText value="AlgaWorks" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo Empresa" />
+					</f:facet>
+					
+					<h:outputText value="LTDA" />
+				</h:column>
+			</h:dataTable>
+		</h:form>	
+	</div>
+	
+	<footer>
+		Curso online "JSF e PrimeFaces Essencial"
+	</footer>
+</h:body>
+
 </html>
