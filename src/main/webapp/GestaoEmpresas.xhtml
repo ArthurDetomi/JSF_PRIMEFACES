@@ -74,10 +74,12 @@
 				<h:outputLabel value="Faturamento : " for="faturamento"/>
 				<h:panelGroup>	
 						<h:inputText id="faturamento" value="#{gestaoEmpresasBean.empresa.faturamento}"
-						abel="farturamento">
-						<f:convertNumber pattern="#,##0.00"/>
-						<f:validateDoubleRange minimum="0" />
+						label="Faturamento">
+							<f:convertNumber pattern="#,##0.00"/>
+							<f:validateDoubleRange minimum="0" />
 						</h:inputText>
+						
+						<h:message for="faturamento" />
 				</h:panelGroup>
 				
 				<h:outputLabel />
