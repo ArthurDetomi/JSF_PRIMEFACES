@@ -12,9 +12,10 @@ import java.io.Serializable;
 import java.util.List;
 
 public class RamoAtividades implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-    @Inject
+	
+	private static final long serialVersionUID = 1L;
+	
+	@Inject
     private EntityManager manager;
 
     public RamoAtividades() {

@@ -1,12 +1,14 @@
 package com.algaworks.erp.controller;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.algaworks.erp.model.Empresa;
-import com.algaworks.erp.model.TipoEmpresa;
+import com.algaworks.erp.repository.Empresas;
 
 /*
  * @Named para transformar a classe em um Managed Bean
@@ -29,24 +31,17 @@ public class GestaoEmpresasBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Empresa empresa = new Empresa();
+	@Inject
+	private Empresas empresas;
 
-	public void salvar() {
-		System.out.println("Razao Social:" + empresa.getRazaoSocial() // 
-			+ "\n" + "Nome Fantasia:" + empresa.getNomeFantasia() //	
-			+ "\n" +"Tipo Empresa:" + empresa.getTipo()); 
-	}
-	
-	public String ajuda() {
-		return "AjudaGestaoEmpresas?faces-redirect=true";
+	private List<Empresa> listaEmpresas;
+
+	public void todasEmpresas() {
+		listaEmpresas = empresas.todas();
 	}
 
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-
-	public TipoEmpresa[] getTiposEmpresa() {
-		return TipoEmpresa.values();
+	public List<Empresa> getListaEmpresas() {
+		return listaEmpresas;
 	}
 
 }
